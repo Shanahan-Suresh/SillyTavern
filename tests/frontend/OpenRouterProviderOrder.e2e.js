@@ -5,8 +5,18 @@ test.describe('OpenRouter provider order', () => {
     test.beforeEach(testSetup.awaitST);
 
     const cases = [
-        { name: 'Chat Completion', selector: '#openrouter_providers_chat', module: './scripts/openai.js', settings: 'oai_settings' },
-        { name: 'Text Completion', selector: '#openrouter_providers_text', module: './scripts/textgen-settings.js', settings: 'textgenerationwebui_settings' },
+        {
+            name: 'Chat Completion',
+            selector: '#openrouter_providers_chat',
+            module: './scripts/openai.js',
+            settings: 'oai_settings',
+        },
+        {
+            name: 'Text Completion',
+            selector: '#openrouter_providers_text',
+            module: './scripts/textgen-settings.js',
+            settings: 'textgenerationwebui_settings',
+        },
     ];
 
     for (const { name, selector, module, settings: settingsExport } of cases) {

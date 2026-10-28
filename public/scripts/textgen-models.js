@@ -375,7 +375,8 @@ export function updateOpenRouterProvidersWarning(providersSelector) {
  * @returns {string[]} Still-selected providers in their stored order, followed by new selections
  */
 export function mergeOpenRouterProviderOrder(storedProviders, selectedProviders) {
-    const kept = (Array.isArray(storedProviders) ? storedProviders : []).filter(provider => selectedProviders.includes(provider));
+    const stored = Array.isArray(storedProviders) ? storedProviders : [];
+    const kept = stored.filter(provider => selectedProviders.includes(provider));
     const added = selectedProviders.filter(provider => !kept.includes(provider));
     return [...kept, ...added];
 }
